@@ -21,6 +21,12 @@ activityDataByDate <- aggregate(activityData$steps, list(date = activityData$dat
 hist(activityDataByDate$x, xlab = "total number of steps", main = "Histogram of total number steps by date")
 ```
 
+2. Calculate and report the mean and median total number of steps taken per day
+```{r}
+mean(activityDataByDate$x, na.rm = TRUE)
+median(activityDataByDate$x, na.rm = TRUE)
+```
+
 ## What is the average daily activity pattern?
 
 

@@ -20,6 +20,24 @@ hist(activityDataByDate$x, xlab = "total number of steps", main = "Histogram of 
 
 ![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
 
+2. Calculate and report the mean and median total number of steps taken per day
+
+```r
+mean(activityDataByDate$x, na.rm = TRUE)
+```
+
+```
+## [1] 10766.19
+```
+
+```r
+median(activityDataByDate$x, na.rm = TRUE)
+```
+
+```
+## [1] 10765
+```
+
 ## What is the average daily activity pattern?
 
 
