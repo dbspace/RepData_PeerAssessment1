@@ -72,6 +72,8 @@ sum(!complete.cases(activityData))
 
 * Devise a strategy for filling in all of the missing values in the dataset
 
+the strategy is use the average activity data by 5 minutes interval that we create before to fill in the NA value in the data set.
+
 ```r
 #use the average activity data by 5 miniute interval that we create before
 str(averageActivityData)
