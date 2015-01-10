@@ -11,7 +11,7 @@ activityData$date <- as.Date(activityData$date, '%Y-%m-%d')
 ```
 
 ## What is mean total number of steps taken per day?
-1. Make a histogram of the total number of steps taken each day
+* Make a histogram of the total number of steps taken each day
 
 ```r
 activityDataByDate <- aggregate(activityData$steps, list(date = activityData$date), sum)
@@ -20,7 +20,7 @@ hist(activityDataByDate$x, xlab = "total number of steps", main = "Histogram of 
 
 ![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
 
-2. Calculate and report the mean and median total number of steps taken per day
+* Calculate and report the mean and median total number of steps taken per day
 
 ```r
 mean(activityDataByDate$x, na.rm = TRUE)
@@ -39,8 +39,25 @@ median(activityDataByDate$x, na.rm = TRUE)
 ```
 
 ## What is the average daily activity pattern?
+* Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
+```r
+averageActivityData <- aggregate(activityData$steps, 
+                                 list(interval=activityData$interval), mean, na.rm=TRUE)
+plot(averageActivityData$interval, averageActivityData$x, type = 'l', ylab="average number of steps")
+```
 
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+
+* Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+
+```r
+averageActivityData$interval[which.max(averageActivityData$x)]
+```
+
+```
+## [1] 835
+```
 
 ## Imputing missing values
 
